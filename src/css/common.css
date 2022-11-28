@@ -16,3 +16,31 @@ img {
   display: block;
   max-width: 100%;
 }
+.timer {
+  display: flex;
+  gap: 20px;
+  background-color: rgb(32, 46, 179);
+  color: #fafafa;
+  justify-content: center;
+  padding: 25px;
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+input {
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  border: solid black 3px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+button {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: solid black 3px;
+}
