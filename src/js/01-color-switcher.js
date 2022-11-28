@@ -9,7 +9,6 @@ const refs = {
 };
 
 let timer = 0;
-
 refs.start.addEventListener('click', () => {
   timer = setInterval(() => {
     refs.bgColor.style.backgroundColor = getRandomHexColor();
