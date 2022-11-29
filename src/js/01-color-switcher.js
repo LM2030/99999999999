@@ -13,10 +13,12 @@ refs.start.addEventListener('click', () => {
   timer = setInterval(() => {
     refs.bgColor.style.backgroundColor = getRandomHexColor();
     refs.start.disabled = true;
+    refs.stop.disabled = false;
   }, 1000);
 });
 
 refs.stop.addEventListener('click', () => {
   clearInterval(timer);
   refs.start.disabled = false;
+  refs.stop.disabled = true;
 });
