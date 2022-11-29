@@ -3,22 +3,25 @@ function getRandomHexColor() {
 }
 
 const refs = {
-  bgColor: document.querySelector(`body`),
-  start: document.querySelector(`button[data-start]`),
-  stop: document.querySelector(`button[data-stop]`),
+  start: document.querySelector('button[data-start]'),
+  stop: document.querySelector('button[data-stop]'),
 };
 
 let timer = 0;
-refs.start.addEventListener('click', () => {
-  timer = setInterval(() => {
-    refs.bgColor.style.backgroundColor = getRandomHexColor();
-    refs.start.disabled = true;
-    refs.stop.disabled = false;
-  }, 1000);
-});
 
-refs.stop.addEventListener('click', () => {
+refs.start.addEventListener('click', magicStart);
+refs.stop.addEventListener('click', magicStop);
+
+function magicStart() {
+  refs.start.toggleAttribute('disabled');
+  timer = setInterval(colorChange, 1000);
+}
+
+function colorChange() {
+  document.body.style.backgroundColor = getRandomHexColor();
+}
+
+function magicStop() {
+  refs.start.toggleAttribute('disabled');
   clearInterval(timer);
-  refs.start.disabled = false;
-  refs.stop.disabled = true;
-});
+}
